@@ -7,6 +7,28 @@ public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         //初始化窗口参数
         initFrame();
+        //初始化游戏棋盘
+        initGamePanel();
+    }
+
+    private void initGamePanel() {
+        JPanel jPanel = new JPanel() {
+            //paint是用来绘制面板中的内容
+            @Override
+            public void paint(Graphics g) {
+                //设置画笔颜色
+                g.setColor(Color.BLACK);
+                //绘制40条横线
+                for (int i = 0; i <40 ; i++) {
+                    g.drawLine(0,15*i,600,15*i);
+                }
+                //绘制40条竖线
+                for (int i = 0; i <40 ; i++) {
+                    g.drawLine(15*i,0,15*i,600);
+                }
+            }
+        };
+        add(jPanel);
     }
 
     private void initFrame() {
