@@ -2,14 +2,21 @@ package com.itheima;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.LinkedList;
 
 public class MainFrame extends JFrame {
+    private Snake snake;
     public MainFrame() throws HeadlessException {
         //初始化窗口参数
         initFrame();
         //初始化游戏棋盘
         initGamePanel();
+        //初始化蛇
         initSnake();
+    }
+
+    private void initSnake() {
+        snake=new Snake();
     }
 
     private void initGamePanel() {
@@ -26,6 +33,11 @@ public class MainFrame extends JFrame {
                 //绘制40条竖线
                 for (int i = 0; i <40 ; i++) {
                     g.drawLine(15*i,0,15*i,600);
+                }
+                //绘制蛇
+                LinkedList<Node> body=snake.getBody();
+                for (Node node : body) {
+                    g.fillRect(node.getX()*15,node.getY()*15,15,15);
                 }
             }
         };

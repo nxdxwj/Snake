@@ -18,11 +18,18 @@ public class Snake {
         body.add(new Node(20,20));
         body.add(new Node(21,20));
         body.add(new Node(22,20));
+        body.add(new Node(23,20));
+        body.add(new Node(24,20));
     }
 
     //获取蛇身
-    public LinkedList<Node> getBody(){
+
+
+    public LinkedList<Node> getBody() {
         return body;
     }
 
+    public void setBody(LinkedList<Node> body) {
+        this.body = body;
+    }
 }
