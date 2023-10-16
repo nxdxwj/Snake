@@ -10,6 +10,8 @@ public class MainFrame extends JFrame {
     }
 
     private void initFrame() {
+        //设置窗口标题
+        setTitle("贪吃蛇游戏");
         //设置窗口宽高
         setSize(610,640);
         //设置窗口位置
