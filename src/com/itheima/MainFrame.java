@@ -9,6 +9,7 @@ public class MainFrame extends JFrame {
         initFrame();
         //初始化游戏棋盘
         initGamePanel();
+        initSnake();
     }
 
     private void initGamePanel() {
